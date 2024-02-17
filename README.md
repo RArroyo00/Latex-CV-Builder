@@ -1,6 +1,9 @@
 # Latex-CV-Builder
 Create your own professional curriculum vitae using this LaTeX template, which includes comprehensive sections on education, work experience, skills, and certifications.
 
+## Preview
+[CVTemplate.pdf](https://github.com/RArroyo00/Latex-CV-Builder/files/14317770/CVTemplate.pdf)
+
 ## How to use
 
 To use this LaTeX CV template, follow these steps:
