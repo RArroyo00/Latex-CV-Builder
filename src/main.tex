@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+% Font settings
+\usepackage[T1]{fontenc}
+\usepackage{roboto} % Roboto
+% \usepackage{helvet} % Helvetica
+% \usepackage{lmodern} % Latin Modern Sans Serif
+% \usepackage{times} % Times New Roman
+%  \usepackage{Oswald} % Oswald
+\usepackage{inter} % https://tug.org/FontCatalogue/
+\usepackage{multicol}
+\renewcommand*\familydefault{\sfdefault}
+
+% Page layout
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.8cm,
+    bottom=1in,
+    left=2.5cm,
+    right=2.5cm
+}
+
+% Section numbering depth
+\setcounter{secnumdepth}{0}
+
+% Unicode compatibility
+\pdfgentounicode=1
+
+% List settings
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=0pt..1.5em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+
+% Color settings
+\usepackage[dvipsnames]{xcolor}
+\colorlet{icnclr}{gray}
+
+% Title and section formatting
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*.5}
+\titlespacing{\subsubsection}{0pt}{*0}{*.5}
+\titleformat{\section}{\large\fontseries{black}\selectfont\uppercase}{}{}{}[\global\RemVStrue]
+\titleformat{\subsection}{\large\fontseries{semibold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\large\fontseries{medium}\selectfont}{}{}{}
+
+% Function to add a line after the title
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]}
+
+% Variable to remove vertical space between \section and \subsection
+\newif\ifRemVS
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+% Constants
+\input{constants.tex}
+
+% Icons package
+\usepackage{fontawesome5}
+
+% Hyperlink settings
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=black,
+    pdftitle={Latex-CV-Builder},
+}
+
+% Page numbering
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}    
+\fancyhf{}                           
+\cfoot{\color{darkgray}  Page \thepage{} of \totalpages}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\fontsize{36}{36}\selectfont\interheavy \fullName} \\ \bigskip 
+    {\fontsize{18}{18}\selectfont\interthin \grade} \\ \bigskip 
+    \hfill {\location} \\
+    \hfill \href{mailto:\email}{\email} \\
+    \hfill \href{https://github.com/\ghUserName}{\MakeLowercase{\ghUserName}} \\ 
+    \hfill \href{https://www.linkedin.com/in/\linkedinUser}{\linkedinUser} 
+\end{center}
+
+% Summary section 
+\input{sections/summary.tex} % Fill out this section with your own professional summary. Describe your experience, skills, and goals. Use this space to highlight your most relevant achievements and professional aspirations. Be concise yet informative, and make sure to convey your passion and commitment to excellence in your work.
+
+% Skills section 
+\input{sections/skills.tex} % List your technical and language skills here.
+
+% Education section 
+\input{sections/education.tex} % Fill out this section with your educational background, including the institutions attended, degrees earned, and graduation dates.
+
+% Experience section 
+\input{sections/experience.tex} % Fill out this section with your work experience, including job titles, companies, dates of employment, and job responsibilities.
+
+% Certifications section 
+\input{sections/certifications.tex} % List your certifications here, including the year, certification name, and certifying entity.
+
+% Credits
+\section*{Credits}
+This document template was created by \href{https://www.linkedin.com/in/raul-ae}{Raul Arroyo}. You are free to modify and use it for your own purposes. If you have any questions or suggestions, feel free to reach out to me.
+
+
+\end{document}
