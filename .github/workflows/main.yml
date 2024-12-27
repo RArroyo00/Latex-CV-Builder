@@ -55,7 +55,7 @@ jobs:
           latest_tag="$latest_tag"
           if [ -z "$latest_tag" ]; then
             echo "latest_tag not found" 
-            current_version="v0.0.1"
+            current_version="v1.0.0"
           else
             version=${latest_tag#v}  
             IFS='.' read -r major minor patch <<< "$version"  
